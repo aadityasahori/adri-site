@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adrix — Premium Source Codes</title>
+  <meta name="description" content="Premium, production-ready source codes and AI projects by Adrix.">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="container">
+    <div class="brand">
+      <img src="/assets/logo.svg" alt="Adrix logo" class="logo">
+      <span>Adrix</span>
+    </div>
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#blog">Blog</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero container">
+    <h1>Premium <span class="glow">Source Codes</span> for Devs</h1>
+    <p>Clean, well-documented projects you can ship fast. AI, automation, and full‑stack starters — perfect for students and startups.</p>
+    <div class="cta">
+      <a class="btn primary" href="#products">Browse Projects</a>
+      <a class="btn" href="mailto:info@adrix.shop">Request a Custom Build</a>
+    </div>
+  </section>
+
+  <section id="products" class="container">
+    <h2>Featured Projects</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>AI Resume Builder</h3>
+        <p>Next.js + OpenAI API. Generates ATS‑friendly resumes with smart bullets.</p>
+        <div class="price">₹999 / $19</div>
+        <div class="actions">
+          <a class="btn primary" href="#" target="_blank" rel="noopener">Buy</a>
+          <a class="btn outline" href="#" target="_blank" rel="noopener">Docs / Demo</a>
+        </div>
+      </article>
+      <article class="card">
+        <h3>Expense Tracker (MERN)</h3>
+        <p>JWT auth, charts, categories, export to CSV. Clean codebase.</p>
+        <div class="price">₹799 / $15</div>
+        <div class="actions">
+          <a class="btn primary" href="#" target="_blank" rel="noopener">Buy</a>
+          <a class="btn outline" href="#" target="_blank" rel="noopener">Docs / Demo</a>
+        </div>
+      </article>
+      <article class="card">
+        <h3>Python Chatbot Starter</h3>
+        <p>FastAPI backend + RAG ready. Local embeddings and tools support.</p>
+        <div class="price">₹499 / $9</div>
+        <div class="actions">
+          <a class="btn primary" href="#" target="_blank" rel="noopener">Buy</a>
+          <a class="btn outline" href="#" target="_blank" rel="noopener">Docs / Demo</a>
+        </div>
+      </article>
+    </div>
+    <p class="note">Replace the <em>Buy</em>/<em>Docs</em> links with your Razorpay/PayPal/GitHub demo URLs.</p>
+  </section>
+
+  <section id="blog" class="container">
+    <h2>From the Blog</h2>
+    <ul class="list">
+      <li><a href="#">Top 5 AI Projects with Source Code (Free + Paid)</a></li>
+      <li><a href="#">How to Price Your Student Projects</a></li>
+      <li><a href="#">Ship Faster with Production‑Ready Starters</a></li>
+    </ul>
+  </section>
+
+  <section id="contact" class="container contact">
+    <h2>Contact</h2>
+    <p>Have questions or custom requirements?</p>
+    <a class="btn primary" href="mailto:info@adrix.shop">Email: info@adrix.shop</a>
+  </section>
+
+  <footer class="container footer">
+    <p>© <span id="year"></span> Adrix. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
