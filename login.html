@@ -7,12 +7,13 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #0f172a;
+      background-color: #0f172a; /* dark theme */
       color: white;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
+      margin: 0;
     }
     .login-container {
       background: #1e293b;
@@ -49,28 +50,35 @@
     <p id="status"></p>
   </div>
 
+  <!-- Firebase SDKs (CDN v12.2.1) -->
   <script type="module">
-    // Import Firebase SDKs
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+    import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
 
-import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+    // Firebase config (from Aaditya)
+    const firebaseConfig = {
+      apiKey: "AIzaSyDePtfAKouNDGoNY27_mIfSG096hRJ9U1U",
+      authDomain: "adrix-1.firebaseapp.com",
+      projectId: "adrix-1",
+      storageBucket: "adrix-1.firebasestorage.app",
+      messagingSenderId: "633957470456",
+      appId: "1:633957470456:web:0865dfe89f5e9f6df2ab0d"
+    };
 
-// Your web app's Firebase configuration
-const firebaseConfig = {
-  apiKey: "AIzaSyDePtfAKouNDGoNY27_mIfSG096hRJ9U1U",
-  authDomain: "adrix-1.firebaseapp.com",
-  projectId: "adrix-1",
-  storageBucket: "adrix-1.firebasestorage.app",
-  messagingSenderId: "633957470456",
-  appId: "1:633957470456:web:0865dfe89f5e9f6df2ab0d"
-};
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const provider = new GoogleAuthProvider();
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-
+    // Google Login Button
+    document.getElementById("googleLogin").addEventListener("click", async () => {
+      const statusEl = document.getElementById("status");
+      statusEl.innerText = "Signing in…";
+      try {
+        const result = await signInWithPopup(auth, provider);
+        const user = result.user;
+        statusEl.innerText = `Welcome, ${user.displayName}`;
+        console
     // Google Login Button
     document.getElementById("googleLogin").addEventListener("click", async () => {
       try {
